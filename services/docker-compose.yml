@@ -15,7 +15,7 @@ services:
       MINIO_URL: http://192.168.100.62:9000
       DB_PASSWORD: password123
       DB_USERNAME: postgres
-      BUCKET_NAME_MINIO: image-autoparts
+      BUCKET_NAME_MINIO: images-autoparts
       ACCESS_KEY_MINIO: aZBYSAJeg3G49YUNXHRu
       SECRET_KEY_MINIO: dyFxrfd7wgCwZZZquBTfn253pMlepaTU9W2l71sJ
     deploy:
