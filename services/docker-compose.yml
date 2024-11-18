@@ -1,0 +1,38 @@
+version: '3.8'
+networks:
+  codetruck_network:
+    external: true
+
+services:
+  ms-selling:
+    container_name: cnt-ms-selling
+    image: lanplay12a/ms-selling:1.0.7
+    ports:
+      - "8089:8090"
+    environment:
+      PORT: 8090
+      DB_URL: jdbc:postgresql://pg-database:5432/st_selling
+      MINIO_URL: http://192.168.168.100.28:9000
+      DB_PASSWORD: password123
+      DB_USERNAME: postgres
+      BUCKET_NAME_MINIO: image-autoparts
+      ACCESS_KEY_MINIO: adasdads
+      SECRET_KEY_MINIO: adasdad
+    deploy:
+      resources:
+        limits:
+          memory: 1024m
+    networks:
+      - codetruck_network
+    restart: always
+  
+  front-flasher:
+    container_name: cnt-frontend
+    image: lanplay12a/frontend_web_fc:1.0.5
+    ports:
+      - "4299:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - codetruck_network
+    restart: always
