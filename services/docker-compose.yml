@@ -12,7 +12,7 @@ services:
     environment:
       PORT: 8090
       DB_URL: jdbc:postgresql://pg-database:5432/st_selling
-      MINIO_URL: http://192.168.168.100.62:9000
+      MINIO_URL: http://192.168.100.62:9000
       DB_PASSWORD: password123
       DB_USERNAME: postgres
       BUCKET_NAME_MINIO: image-autoparts
