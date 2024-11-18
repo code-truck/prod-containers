@@ -28,7 +28,7 @@ services:
   
   front-flasher:
     container_name: cnt-frontend
-    image: lanplay12a/frontend_web_fc:1.0.5
+    image: lanplay12a/frontend_web_fc:1.0.6
     ports:
       - "4299:80"
     volumes:
